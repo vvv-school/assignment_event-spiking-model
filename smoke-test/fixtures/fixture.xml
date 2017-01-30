@@ -7,7 +7,7 @@
     </authors>
 
     <module>
-        <name>solution_event-spiking-model</name>
+        <name>assignment_event-spiking-model</name>
         <parameters>--name /vSpikingModel </parameters>
         <node>localhost</node>
     </module>

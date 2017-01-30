@@ -1,7 +1,7 @@
 <application>
 <name> event-spiking-model </name>
 
-<dependencies>	
+<dependencies>
 </dependencies>
 
 <!--
@@ -23,7 +23,7 @@
 </module>
 
 <module>
-    <name>solution_event-spiking-model</name>
+    <name>assignment_event-spiking-model</name>
     <parameters>--name /vSpikingModel --tau 1000000 --Te 1 </parameters>
     <node>localhost</node>
 </module>
