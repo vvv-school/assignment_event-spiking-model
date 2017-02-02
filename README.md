@@ -4,7 +4,7 @@ Using Spiking Neuron Models
 Create an event-driven spiking map based on the leaky integrate and fire neural model
 
 # Prerequisites
-By now, you should have learnt what an event is and how to read and write events in bottles, (e.g. in the  [Optical Flow](https://github.com/vvv-school/tutorial_event-driven-flow) tutorial) 
+By now, you should have learnt what an event is and how to read and write events in bottles, (e.g. in the  [Optical Flow](https://github.com/vvv-school/tutorial_event-driven-flow) tutorial).
 
 # Assignment
 We want you to modify the Callback function (OnRead()) to 
@@ -16,6 +16,10 @@ We want you to modify the Callback function (OnRead()) to
 1. Send the bottle to yarp.
 
 You should be able to visualise the subthreshold activity map of the neurons as an image stream in yarpview and the output events from the map by using `vFramer`, running the _yarpmanager script_ provided from within [**app/scripts**](./app/scripts/)
+
+The structure of the application should look like:
+
+![spikeapp](./misc/assignmet1.png)
 
 You will run this assignment with the [_Dataset_event-spiking-model_]() dataset. The regions where a lot of events sum over time will produce output events.
 
