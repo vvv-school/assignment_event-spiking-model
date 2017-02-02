@@ -19,7 +19,7 @@ You should be able to visualise the subthreshold activity map of the neurons as 
 
 The structure of the application should look like:
 
-![spikeapp](./misc/assignmet1.png)
+![spikeapp](./misc/assignment1.png)
 
 You will run this assignment with the [_Dataset_event-spiking-model_]() dataset. The regions where a lot of events sum over time will produce output events.
 
