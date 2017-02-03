@@ -45,6 +45,12 @@ We want you to modify the Callback function (OnRead()) to
 
 You should be able to visualise the subthreshold activity map of the neurons as an image stream in yarpview and the output events from the map by using `vFramer`, running the _yarpmanager script_ provided from within [**app/scripts**](./app/scripts/)
 
+We can implement a simple integrate and fire equation as:
+```
+E = Ee^(-dt/Tau) + I
+```
+where E is the neuron enery and I is the energy injection amount: for this assignment I should be a constant (e.g. 1.0).
+
 The structure of the application should look like:
 
 ![spikeapp](./misc/assignment1.png)
