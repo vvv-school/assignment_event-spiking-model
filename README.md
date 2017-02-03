@@ -25,6 +25,10 @@ You will run this assignment with the [_Dataset_event-spiking-model_]() dataset.
 
 Some of the points reported above have been already addressed in the code, so you need to **fill in the missing gaps** highlighted by the comment `// FILL IN THE CODE`.
 
+Your spiking model should be coded and the parameters of decay (Tau) and spike threshold (Te) tuned such that output spikes only occur when the stimulus shakes quickly in the image (see the reference image). The model should not spike at other times.
+
+![goal](./misc/assignment1-goal.png)
+
 Once done, you can test your code **Automatically**: [running the script **test.sh**](https://github.com/vvv-school/vvv-school.github.io/blob/master/instructions/how-to-run-smoke-tests.md) in the **smoke-test** directory. 
 
 # [How to complete the assignment](https://github.com/vvv-school/vvv-school.github.io/blob/master/instructions/how-to-complete-assignments.md)
