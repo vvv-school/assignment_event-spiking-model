@@ -4,7 +4,35 @@ Using Spiking Neuron Models
 Create an event-driven spiking map based on the leaky integrate and fire neural model
 
 # Prerequisites
-By now, you should have learnt what an event is and how to read and write events in bottles, (e.g. in the  [Optical Flow](https://github.com/vvv-school/tutorial_event-driven-flow) tutorial).
+By now, you should have learnt what an event is and how to read and write events in bottles, (e.g. in the  [Optical Flow](https://github.com/vvv-school/tutorial_event-driven-flow) tutorial). You will also need some information on:
+
+### vtsHelper
+
+Timestamps are stored with (at the moment) 24 bits (unsigned integer) and the clock performing timestamps has a period of 80 nanoseconds.
+If we do the maths we will overflow every: 2^24 * 80e-9 = 1.34217728 seconds. Therefore our code needs to handle overflows ("timestamp wraps").
+
+##### You'll need this for your assignments!: 
+As we often only need relative time between events, we can account for wraps using:
+
+```javascript
+event<> v; //allocated somewhere
+
+int currenttimestamp = v->getStamp();
+int previoustimestamp;    //allocated previously
+if(previoustimstamp > currenttimestamp) //assuming events are in chronological order this indicates a wrap
+    previoustimestamp -= vtsHelper::getMaxStamp();
+int dt = currenttimestamp - previoustimestamp;
+```
+
+Alternatively the vtsHelper can be used to convert timestamps to a  long unsigned int (many years before an overflow):
+
+```javascript
+vtsHelper unwrap;
+event<> v;
+unsigned long int unwrappedstamp = unwrap(v->getStamp());
+```
+
+##### NOTE: We don't send the unwrapped timestamps in bottles so every module needs to track its own unwrapped timestamp
 
 # Assignment
 We want you to modify the Callback function (OnRead()) to 
