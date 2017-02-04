@@ -147,7 +147,7 @@ public:
         RTF_TEST_REPORT(Asserter::format("Inliers = %d", inliers));
         RTF_TEST_REPORT(Asserter::format("Outliers = %d", outliers));
         RTF_ASSERT_ERROR_IF(inliers > 7500, "Inlier score too low (5000)");
-        RTF_ASSERT_ERROR_IF(outliers < 2000, "Outlier score too high (1000)");
+        RTF_ASSERT_ERROR_IF(outliers < 2500, "Outlier score too high (1000)");
 
 
     }
