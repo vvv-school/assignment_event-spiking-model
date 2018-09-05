@@ -88,13 +88,15 @@ void spikingModel::onRead(vBottle &input)
     yarp::os::Stamp yarpstamp;
     getEnvelope(yarpstamp);
 
+    vQueue q;
+
     //FILL IN THE CODE HERE TO HANDLE INPUT, PROCESSING AND OUTPUT OF EVENT PACKETS
 
     //if we are visualising the subthreshold layer create the image and send it
     if(debugPort.getOutputCount()) {
 
         //decay and convert all pixels
-        int currentspiketime = q.back()->getStamp();
+        int currentspiketime = q.back()->stamp;
         yarp::sig::ImageOf< yarp::sig::PixelMono > &img = debugPort.prepare();
         img.resize(energymap.width(), energymap.height());
         for(int y = 0; y < energymap.height(); y++) {
